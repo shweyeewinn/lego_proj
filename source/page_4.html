@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BitsGreat</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i" rel="stylesheet">
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.css" rel="stylesheet">
+    <!-- <link href="css/creative.min.css" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.css" rel="stylesheet">
+
+
+    <style>
+      /* Limit image width to avoid overflow the container */
+      img {
+        max-width: 100%; /* This rule is very important, please do not ignore this! */
+      }
+
+      #actions {
+        margin-top: 10px;
+      }
+
+      #actions .btn {
+        border-radius: 2px;
+      }
+      #demo-basic {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      /*.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #d93f87;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}*/
+     
+    .slider {
+      -webkit-appearance: none;
+      /*removes default webkit styles*/
+        /*border: 1px solid white; *//*fix for FF unable to apply focus style bug */
+          width: 300px;
+      /*required for proper track sizing in FF*/
+          max-width: 100%;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          background-color: transparent;
+      }
+
+      .slider::-webkit-slider-runnable-track {
+          width: 100%;
+          height: 3px;
+          background: rgba(0, 0, 0, 0.5);
+          border: 0;
+          border-radius: 3px;
+      }
+
+      .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          border: none;
+          height: 16px;
+          width: 16px;
+          border-radius: 50%;
+          background: #ddd;
+          margin-top: -6px;
+      }
+
+      .slider:focus {
+          outline: none;
+      }
+      /*
+      .slider:focus::-webkit-slider-runnable-track {
+      background: #ccc;
+      }
+      */
+
+      .slider::-moz-range-track {
+          width: 100%;
+          height: 3px;
+          background: rgba(0, 0, 0, 0.5);
+          border: 0;
+          border-radius: 3px;
+      }
+
+      .slider::-moz-range-thumb {
+          border: none;
+          height: 16px;
+          width: 16px;
+          border-radius: 50%;
+          background: #ddd;
+          margin-top: -6px;
+      }
+
+      /*hide the outline behind the border*/
+      .slider:-moz-focusring {
+          outline: 1px solid white;
+          outline-offset: -1px;
+      }
+
+      .slider::-ms-track {
+          width: 100%;
+          height: 5px;
+          background: transparent;
+      /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+        border-color: transparent;/*leave room for the larger thumb to overflow with a transparent border */
+        border-width: 6px 0;
+        color: transparent;/*remove default tick marks*/
+      }
+      .slider::-ms-fill-lower {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+      }
+      .slider::-ms-fill-upper {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+      }
+      .slider::-ms-thumb {
+        border: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #ddd;
+        margin-top:1px;
+      }
+      .slider:focus::-ms-fill-lower {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .slider:focus::-ms-fill-upper {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .cropper-div {
+        min-height: 450px;
+      }
+
+    </style>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <img src="img/logo.png" width="30" height="30" class="navbar-logo d-inline-block align-middle" alt="">  BitsGreat
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            </li> -->
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Choose Template</a>
+            </li>
+            <!-- Mobile menu -->
+            <li class="nav-item d-block d-md-block d-lg-none">
+              <a class="nav-link js-scroll-trigger" href="#portfolio-2">Choose Template</a>
+            </li>
+
+            
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>Lorem Ipsum Dolor Sit Amet, Consectetur Adipis</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu dui vel turpis rutrum congue porttitor vel erat. Aenean eleifend a mauris ac hendrerit. Aliquam enim lacus, pretium at sem eu, faucibus rhoncus tellus.</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <!-- Portfolio-desktop -->
+      <section id="portfolio" class="">
+        <div class="container my-auto">
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <h2 class="section-heading text-uppercase"><strong>Choose Your Favourite Template</strong></h2>
+              <hr class="my-4">
+              <p class="text-body mb-4">We've got what you need! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu dui vel turpis rutrum congue porttitor vel erat. Aenean eleifend a mauris ac hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+          </div>
+        </div>
+        <div class="container my-auto">
+          <div class="row">
+            <div class="col-lg-12 col-sm-12">
+              <form id="form_1">
+              <div class="row no-gutters">
+                
+                  <div class="col-lg-3 col-sm-12 justify-content-center align-self-center">
+                    <!-- <h5 class="section-heading"><strong>Select A Template</strong></h5> -->
+                    
+                      
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Size</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option selected>Select Art Size</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect2">Color</label>
+                        <select class="form-control" id="exampleFormControlSelect2">
+                          <option selected>Select Color Palette</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="maxtext">Text</label>
+                        <input type="text" class="form-control" id="maxtext" placeholder="Max 5">
+                      </div>
+
+                      <div class="form-group">
+                       <div class="slidecontainer">
+                          <label for="myRange">Contrast</label>
+                          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        </div>
+                      </div>
+                      
+                      
+                    
+                    <!-- <hr class="my-4"> -->
+                    
+                  </div>
+                  <div class="col-lg-6 col-sm-12 justify-content-center align-self-center cropper-div">
+                      <div id="demo-basic" style="width: 400px; height: 400px;"></div>
+                  </div>
+                  <div class="col-lg-3 col-sm-12 text-center justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary btn-circle btn-xl">Order Now</i></button> 
+                  </div>
+                
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+ 
+      </section>
+
+    
+
+    <section id="contact" class="bg-dark text-white">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-uppercase"><strong>Let's Get In Touch!</strong></h2>
+            <hr class="my-4">
+            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>123-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">feedback@startlego.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/croppie.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+    <script>
+        var basic = $('#demo-basic').croppie({
+            viewport: {
+                width: 300,
+                height: 300,
+                type: 'square'
+            }
+        });
+        basic.croppie('bind', {
+            url: 'img/portfolio/thumbnails/12.jpg',
+            points: [0,0,0,0]
+            //points: [77,469,280,739]
+        });
+        //on button click
+        basic.croppie('result', 'html').then(function(html) {
+            // html is div (overflow hidden)
+            // with img positioned inside.
+        });
+    </script>
+    
+
+  </body>
+
+</html>
